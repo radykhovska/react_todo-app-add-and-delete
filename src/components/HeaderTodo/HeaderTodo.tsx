@@ -15,7 +15,7 @@ interface Props {
   isTempTodoCreating: boolean;
 }
 
-export const Header: FC<Props> = ({
+export const HeaderTodo: FC<Props> = ({
   todos,
   setErrorMessage,
   setTodos,
@@ -24,7 +24,7 @@ export const Header: FC<Props> = ({
   isTempTodoCreating,
 }: Props) => {
   // const inputRef = useRef<HTMLInputElement>(null);
-  const isAllTodosActive = todos.every(todo => todo.completed);
+  const areAllTodosActive = todos.every(todo => todo.completed);
   const [title, setTitle] = useState('');
 
   useEffect(() => {
@@ -81,7 +81,7 @@ export const Header: FC<Props> = ({
       <button
         type="button"
         className={classNames('todoapp__toggle-all', {
-          active: isAllTodosActive,
+          active: areAllTodosActive,
         })}
         data-cy="ToggleAllButton"
         disabled={isTempTodoCreating}

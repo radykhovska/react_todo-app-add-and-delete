@@ -5,7 +5,7 @@ import { UserWarning } from './UserWarning';
 import { deleteTodo, getTodos, USER_ID } from './api/todos';
 import { Todo } from './types/Todo';
 import { FooterTodo } from './components/FooterTodo';
-import { Header } from './components/HeaderTodo';
+import { HeaderTodo } from './components/HeaderTodo';
 import { TodoList } from './components/TodoList';
 import { ErrorNotification } from './components/ErrorNotification';
 import { FilteredBy } from './types/filteredBy';
@@ -77,7 +77,7 @@ export const App: React.FC = () => {
     <div className="todoapp">
       <h1 className="todoapp__title">todos</h1>
       <div className="todoapp__content">
-        <Header
+        <HeaderTodo
           todos={todos}
           setErrorMessage={setErrorMessage}
           setTodos={setTodos}
